@@ -1,0 +1,26 @@
+* {
+    background-color: #63ad73;
+}
+
+div {
+    background-color: black;
+    width: 75%;
+    border: 2px white solid;
+    padding: 5px;
+    margin-left: 10%;
+}
+
+img {
+    width: 90%;
+    border: 2px white solid;
+    margin-top: 20px;
+    margin-left: 4%;
+}
+
+.text-formatting {
+    text-align: center;
+    color: white;
+    background-color: black;
+    font-family: 'Libre Baskerville', serif;
+    text-transform: uppercase;
+}
