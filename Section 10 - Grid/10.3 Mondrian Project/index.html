@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mondrian Project</title>
+  <style>
+    /* 
+    Write your CSS here 
+    Gap Colour: #000
+    White: #F0F1EC
+    Red: #E72F24
+    Black: #232629
+    Blue: #004592
+    Yellow: #F9D01E
+
+    For dimensions, see dimensions.png image.
+    HINT: Remember you can't change the properties of grid lines.
+    But grid lines are transparent!
+    */
+
+    html {
+      background-color: aliceblue;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+      color: rgb(1, 1, 63);
+    }
+
+    #line-div {
+      border: rgb(1, 1, 63) 10px solid;
+      margin: 50px;
+      border-radius: 50px
+    }
+
+    body {
+      display: flex;
+      display: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .surrounding-grid {
+      display: grid;
+      height: 100%;
+      grid-template-columns: 320px 9px 198px 9px 153px 9px 50px;
+      grid-template-rows: 414px 9px 130px 10px 155px 9px 20px;
+      margin: 50px
+    }
+
+    .red-box {
+      background-color: #E72F24;
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+
+    .black-box {
+      background-color: #000000;
+    }
+    #black-box-1 {
+      grid-column: 2 / 3;
+      grid-row: 1 / 8;
+    }
+    #black-box-2 {
+      grid-column: 1 / 8;
+      grid-row: 2 / 3;
+    }
+    #black-box-3 {
+      grid-column: 6 / 7;
+      grid-row: 3 / 8;
+    }
+    #black-box-4 {
+      grid-column: 1 / 6;
+      grid-row: 6 / 7;
+    }
+    #black-box-5 {
+      grid-column: 7 / 8;
+      grid-row: 4 / 5;
+    }
+
+    .white-box {
+      background-color: #F0F1EC;
+    }
+    #white-box-1 {
+      grid-column: 3 / 8;
+      grid-row: 1 / 2;
+    }
+    #white-box-2 {
+      grid-column: 1 / 2;
+      grid-row: 3 / 6;
+    }
+    #white-box-3 {
+      grid-column: 3 / 6;
+      grid-row: 3 / 6;
+    }
+    #white-box-4 {
+      grid-column: 7 / 8;
+      grid-row: 5 / 8;
+    }
+    #white-box-5 {
+      grid-column: 1 / 2;
+      grid-row: 7 / 8;
+    }
+
+    .blue-box {
+      background-color: #004592;
+      grid-column: 7 / 8;
+      grid-row: 3 / 4;
+    }
+
+    .yellow-box {
+      background-color: #F9D01E;
+      grid-column: 3 / 4;
+      grid-row: 7 / 8;
+    }
+
+    .grey-box {
+      background-color: #232629;
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Write your HTML here -->
+
+  <div id="line-div">
+
+    <h1>Mondrian Project</h1>
+    <h2>Joshua Dierickse</h2>
+    <h3>Udemy - The Complete 2023 Web Development Bootcamp</h3>
+
+    <div class="surrounding-grid">
+      <div class="red-box"></div>
+      <div class="black-box" id="black-box-1"></div>
+      <div class="white-box" id="white-box-1"></div>
+
+      <div class="black-box" id="black-box-2"></div>
+
+      <div class="white-box" id="white-box-2"></div>
+      <div class="white-box" id="white-box-3"></div>
+      <div class="black-box" id="black-box-3"></div>
+      <div class="blue-box"></div>
+      <div class="black-box" id="black-box-5"></div>
+      <div class="white-box" id="white-box-4"></div>
+
+      <div class="black-box" id="black-box-4"></div>
+
+      <div class="white-box" id="white-box-5"></div>
+      <div class="yellow-box"></div>
+
+
+      <div class="black-box"></div>
+      <div class="grey-box"></div>
+      <div class="black-box"></div>
+    
+    </div>
+
+  </div>
+
+</body>
+
+</html>
