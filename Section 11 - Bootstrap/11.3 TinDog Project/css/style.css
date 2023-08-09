@@ -1,3 +1,7 @@
+html{
+  overflow-x:hidden;
+}
+
 .gradient-background {
   background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
   background-size: 180% 180%;
@@ -25,4 +29,57 @@
 .profile-img {
   height: 100px;
   border-radius: 50%;
+}
+
+#dog-logo {
+  height: 30px;
+  margin: 0px 20px 0px 25px;
+}
+
+#dog-text {
+  margin-right: 20px;
+}
+
+#iphone {
+  width: 300px;
+}
+
+.center-text {
+  padding-left: 50%;
+}
+
+#download-logo {
+  margin-right: 10px;
+}
+
+#display-text {
+  margin-bottom: 30px;
+}
+
+#center-object {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#dog-img {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+
+#centered-objects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 50px;
+}
+
+.business-img {
+  height: 30px;
+}
+
+.light-white {
+  color: #dee2e6;
+  text-decoration: none;
 }
