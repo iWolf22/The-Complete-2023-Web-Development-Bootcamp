@@ -1,0 +1,6 @@
+--User Experience (UX)--
+
+1. Simplicity
+2. Consitency
+3. F-Pattern
+4. Mobile/Desktop Design
