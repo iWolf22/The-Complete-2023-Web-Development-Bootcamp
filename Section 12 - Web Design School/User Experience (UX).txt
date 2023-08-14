@@ -3,4 +3,4 @@
 1. Simplicity
 2. Consitency
 3. F-Pattern
-4. Mobile/Desktop Design
+4. Mobile/Desktop   Design
