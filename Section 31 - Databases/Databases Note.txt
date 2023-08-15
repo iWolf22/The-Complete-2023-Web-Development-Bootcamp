@@ -1,0 +1,29 @@
+---=== Databases Note ===---
+Complete Web Development Bootcamp
+Joshua Dierickse
+
+SQL
+ - Structured Query Language
+ - Relational
+
+NoSQL
+ - Not only Structured Query Language
+ - Nonrelational
+
++---------------------------+------------------------------------+
+|           MySQL           |               MongoDB              |
++---------------------------+------------------------------------+
+|                       SQL | NoSQL                              |
++---------------------------+------------------------------------+
+| Structured Query Language | Not only Structured Query Language |
++---------------------------+------------------------------------+
+|               More mature | Shiny and new                      |
++---------------------------+------------------------------------+
+|           Table structure | Document structure                 |
++---------------------------+------------------------------------+
+|         Requires a schema | More flexible to changes           |
++---------------------------+------------------------------------+
+|  Great with relationships | Not great with relationships       |
++---------------------------+------------------------------------+
+|         Scales vertically | Scales horizontally                |
++---------------------------+------------------------------------+
