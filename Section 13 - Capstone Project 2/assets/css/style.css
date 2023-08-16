@@ -1097,3 +1097,19 @@ section {
   background-color: #149ddd;
 }
 
+.modal-resume {
+  height: 90vh;
+}
+
+.modal-portfolio {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#carousel-hover {
+  transition: 0.3s !important;
+}
+
+#carousel-hover:hover {
+  background-image: linear-gradient(to right,rgb(228, 237, 249), rgba(255, 255, 255, 0)) !important;
+}

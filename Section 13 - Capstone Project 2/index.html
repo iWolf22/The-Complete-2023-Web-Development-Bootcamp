@@ -320,7 +320,7 @@
     <div class="container">
       <div class="modal fade modal-front" id="resumeModal" tabindex="-1" aria-labelledby="resumeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
-          <div class="modal-content">
+          <div class="modal-content modal-resume">
             <div class="modal-header border-0">
               <h5 class="modal-title" id="resumeModalLabel">Joshua Dierickse's Resume</h5>
               <button type="button" class="btn-close modal-x-button" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -371,35 +371,42 @@
           </div>
           <div class="container">
             <div class="modal fade modal-front" id="portfolio-1-Modal" tabindex="-1" aria-labelledby="portfolio-1-ModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered modal-xl">
+              <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                   <div class="modal-header border-0">
                     <h5 class="modal-title" id="portfolio-1-ModalLabel">Flappy Bird Pygame</h5>
                     <button type="button" class="btn-close modal-x-button" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
-                  <div class="modal-body">
-
-                    <div class="col-lg-4">
-                      <div class="portfolio-details-slider swiper">
-                        <div class="swiper-wrapper align-items-center">
-          
-                          <div class="swiper-slide">
-                            <img src="assets/img/portfolio/portfolio-1/img-1.png" alt="">
-                          </div>
-          
-                          <div class="swiper-slide">
-                            <img src="assets/img/portfolio/portfolio-1/img-2.png" alt="">
-                          </div>
-          
-                          <div class="swiper-slide">
-                            <img src="assets/img/portfolio/portfolio-1/img-3.png" alt="">
-                          </div>
-          
-                        </div>
-                        <div class="swiper-pagination"></div>
-                      </div>
+                  <div class="modal-body modal-portfolio">
+                    <div class="col-lg-5">
+                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit tenetur ad id placeat velit minus animi numquam facilis ducimus. Officia excepturi non cum. Magni veritatis nostrum quas nulla officiis cupiditate incidunt explicabo fugit provident pariatur reiciendis odio, laborum laboriosam vitae debitis illo ea minima perferendis sint nisi harum tempore recusandae minus tempora. Eos, deserunt ab. Molestiae minima sapiente esse pariatur? Qui aut debitis adipisci, aspernatur ea fugit, facere, sed labore tenetur fugiat voluptatibus dolore tempore animi deserunt reiciendis nesciunt eveniet ipsa eos possimus? Iste, mollitia repudiandae, perferendis reprehenderit culpa officiis commodi autem expedita labore aut numquam eligendi et nemo accusantium!</p>
                     </div>
-
+                    <div id="carouselExampleIndicators" class="carousel slide col-lg-7">
+                      <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                      </div>
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="./assets/img/portfolio/portfolio-1/img-1.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="./assets/img/portfolio/portfolio-1/img-2.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="./assets/img/portfolio/portfolio-1/img-3.png" class="d-block w-100" alt="...">
+                        </div>
+                      </div>
+                      <button id="carousel-hover" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
