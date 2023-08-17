@@ -362,7 +362,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap" data-bs-toggle="modal" data-bs-target="#portfolio-1-Modal">
-              <img src="assets/img/portfolio/portfolio-1.png" class="img-fluid" alt="">
+              <img src="assets/img/portfolio/portfolio-1/img-1.png" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Flappy Bird Pygame</h4>
                 <p>A Flappy Bird clone made in Pygame.</p>
@@ -378,31 +378,76 @@
                     <button type="button" class="btn-close modal-x-button" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body modal-portfolio">
-                    <div class="col-lg-5">
-                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit tenetur ad id placeat velit minus animi numquam facilis ducimus. Officia excepturi non cum. Magni veritatis nostrum quas nulla officiis cupiditate incidunt explicabo fugit provident pariatur reiciendis odio, laborum laboriosam vitae debitis illo ea minima perferendis sint nisi harum tempore recusandae minus tempora. Eos, deserunt ab. Molestiae minima sapiente esse pariatur? Qui aut debitis adipisci, aspernatur ea fugit, facere, sed labore tenetur fugiat voluptatibus dolore tempore animi deserunt reiciendis nesciunt eveniet ipsa eos possimus? Iste, mollitia repudiandae, perferendis reprehenderit culpa officiis commodi autem expedita labore aut numquam eligendi et nemo accusantium!</p>
+                    <div class="col-lg-5 modal-text">
+                      <h3 class="modal-sub-title">Project Description</h3>
+                      <p>This is a flappy bird clone I made for a grade 11 communication technology class using the well-known python library Pygame. Although I have created many games in the past, this one is by far the most well-done and polished, which is why I choose to showcase it in my portfolio. If you happen to have some free time I would strongly recommend trying the game for yourself on Replit or checking out the source code on GitHub via the links below.</p>
+                      <h3 class="modal-sub-title">Project Links</h3>
+                      <div class="modal-flex">
+                        <a href="https://github.com/iWolf22/Flappy-Bird-Pygame" target="_blank">
+                          <div>
+                            <img src="./assets/img/logos/Github-photo.png" alt="Github Logo"/>
+                            <p>Github</p>
+                          </div>
+                        </a>
+                        <a href="https://replit.com/@JoshuaDierickse/Flappy-Bird-40?v=1" target="_blank">
+                          <div>
+                            <img src="./assets/img/logos/Replit-photo.png" alt="Github Logo"/>
+                            <p>Replit</p>
+                          </div>
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=t1157xhHw74" target="_blank">
+                          <div>
+                            <img src="./assets/img/logos/Youtube-photo.png" alt="Github Logo"/>
+                            <p>Youtube</p>
+                          </div>
+                        </a>
+                      </div>
                     </div>
-                    <div id="carouselExampleIndicators" class="carousel slide col-lg-7">
+                    <div id="carousel-portfolio-1" class="carousel slide col-lg-7 black-carousel" data-bs-ride="carousel">
                       <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carousel-portfolio-1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carousel-portfolio-1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carousel-portfolio-1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carousel-portfolio-1" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#carousel-portfolio-1" data-bs-slide-to="4" aria-label="Slide 5"></button>
                       </div>
                       <div class="carousel-inner">
                         <div class="carousel-item active">
                           <img src="./assets/img/portfolio/portfolio-1/img-1.png" class="d-block w-100" alt="...">
+                          <div class="carousel-caption d-none d-md-block">
+                            <h5><mark>Game Play 1</mark></h5>
+                          </div>
                         </div>
                         <div class="carousel-item">
                           <img src="./assets/img/portfolio/portfolio-1/img-2.png" class="d-block w-100" alt="...">
+                          <div class="carousel-caption d-none d-md-block">
+                            <h5><mark>Game Play 2</mark></h5>
+                          </div>
                         </div>
                         <div class="carousel-item">
                           <img src="./assets/img/portfolio/portfolio-1/img-3.png" class="d-block w-100" alt="...">
+                          <div class="carousel-caption d-none d-md-block">
+                            <h5><mark>Game Play 3</mark></h5>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <img src="./assets/img/portfolio/portfolio-1/img-4.png" class="d-block w-100" alt="...">
+                          <div class="carousel-caption d-none d-md-block">
+                            <h5><mark>Home Screen</mark></h5>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <img src="./assets/img/portfolio/portfolio-1/img-5.png" class="d-block w-100" alt="...">
+                          <div class="carousel-caption d-none d-md-block">
+                            <h5><mark>Shop Screen</mark></h5>
+                          </div>
                         </div>
                       </div>
-                      <button id="carousel-hover" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carousel-portfolio-1" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                       </button>
-                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                      <button class="carousel-control-next" type="button" data-bs-target="#carousel-portfolio-1" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                       </button>
@@ -413,12 +458,114 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap" data-bs-toggle="modal" data-bs-target="#portfolio-2-Modal">
+              <img src="assets/img/portfolio/portfolio-2/img-1.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Java Chess</h4>
+                <p>A chess game built from Java Swing.</p>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="modal fade modal-front" id="portfolio-2-Modal" tabindex="-1" aria-labelledby="portfolio-2-ModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                  <div class="modal-header border-0">
+                    <h5 class="modal-title" id="portfolio-1-ModalLabel">Java Chess</h5>
+                    <button type="button" class="btn-close modal-x-button" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body modal-portfolio">
+                    <div class="col-lg-5 modal-text">
+                      <h3 class="modal-sub-title">Project Description</h3>
+                      <p>This is a fun little chess game a friend and I made for our grade 12 computer science final. It is created with over 2000+ lines of Java code, spread over 6 organised files. The multiplayer version of our chess game is currently fully functional with unique piece movements, like pawn promotions, castling, and en passant. Furthermore, utilizing our advanced algorithms the game also has built-in check/checkmate detection and can even tell if a certain position is considered to be a stalemate.</p>
+                      <h3 class="modal-sub-title">Project Links</h3>
+                      <div class="modal-flex">
+                        <a href="https://github.com/iWolf22/Java-Chess" target="_blank">
+                          <div>
+                            <img src="./assets/img/logos/Github-photo.png" alt="Github Logo"/>
+                            <p>Github</p>
+                          </div>
+                        </a>
+                        <a href="https://replit.com/@TintinBS/Chess?v=1" target="_blank">
+                          <div>
+                            <img src="./assets/img/logos/Replit-photo.png" alt="Github Logo"/>
+                            <p>Replit</p>
+                          </div>
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=mo3MB4qB6r8" target="_blank">
+                          <div>
+                            <img src="./assets/img/logos/Youtube-photo.png" alt="Github Logo"/>
+                            <p>Youtube</p>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div id="carousel-portfolio-2" class="carousel slide col-lg-7 black-carousel" data-bs-ride="carousel">
+                      <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carousel-portfolio-2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carousel-portfolio-2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carousel-portfolio-2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carousel-portfolio-2" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#carousel-portfolio-2" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                        <button type="button" data-bs-target="#carousel-portfolio-2" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                        <button type="button" data-bs-target="#carousel-portfolio-2" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                      </div>
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="./assets/img/portfolio/portfolio-2/img-1.png" class="d-block w-100" alt="...">
+                          <div class="carousel-caption d-none d-md-block">
+                            <h5><mark>Game Play 1</mark></h5>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <img src="./assets/img/portfolio/portfolio-2/img-2.png" class="d-block w-100" alt="...">
+                          <div class="carousel-caption d-none d-md-block">
+                            <h5><mark>Game Play 2</mark></h5>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <img src="./assets/img/portfolio/portfolio-2/img-3.png" class="d-block w-100" alt="...">
+                          <div class="carousel-caption d-none d-md-block">
+                            <h5><mark>Game Play 3</mark></h5>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <img src="./assets/img/portfolio/portfolio-2/img-4.png" class="d-block w-100" alt="...">
+                          <div class="carousel-caption d-none d-md-block">
+                            <h5><mark>Instructions</mark></h5>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <img src="./assets/img/portfolio/portfolio-2/img-5.png" class="d-block w-100" alt="...">
+                          <div class="carousel-caption d-none d-md-block">
+                            <h5><mark>Knight Moves</mark></h5>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <img src="./assets/img/portfolio/portfolio-2/img-5.png" class="d-block w-100" alt="...">
+                          <div class="carousel-caption d-none d-md-block">
+                            <h5><mark>Queen Moves</mark></h5>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <img src="./assets/img/portfolio/portfolio-2/img-5.png" class="d-block w-100" alt="...">
+                          <div class="carousel-caption d-none d-md-block">
+                            <h5><mark>Home Screen</mark></h5>
+                          </div>
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carousel-portfolio-2" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carousel-portfolio-2" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -1065,7 +1065,7 @@ section {
 }
 
 .modal-content {
-  background-color: #e4edf9;
+  background-color: #f5f8fd;
   border-radius: 0 !important;
 }
 
@@ -1091,6 +1091,7 @@ section {
   opacity: 1;
   transition: 0.3s;
   margin-bottom: 15px !important;
+  border: 2px solid #050d18;
 }
 
 .modal-x-button:hover {
@@ -1106,10 +1107,67 @@ section {
   flex-wrap: wrap;
 }
 
-#carousel-hover {
-  transition: 0.3s !important;
+.modal-portfolio .modal-text {
+  padding-right: 50px;
 }
 
-#carousel-hover:hover {
-  background-image: linear-gradient(to right,rgb(228, 237, 249), rgba(255, 255, 255, 0)) !important;
+.modal-portfolio .modal-svg {
+  fill: #ffffff;
+  background-color: #212431;
+  height: 40px;
+  width: 40px;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.modal .modal-sub-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #050d18;
+}
+
+.modal .modal-flex img {
+  height: 50px;
+  width: 50px;
+}
+
+.modal .modal-flex {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.modal .modal-flex div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 10px 0px 10px;
+  border-radius: 10%;
+  transition: 0.3s;
+  border: 2px solid #050d18;
+}
+
+.modal .modal-flex div:hover {
+  background-color: #149ddd;
+}
+
+.modal .modal-flex p {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: small;
+  font-family: "Poppins", sans-serif;
+  color: #050d18;
+  margin-bottom: 6px;
+}
+
+.modal mark {
+  background-color: #ffffff8c;
+  color: #050d18;
+}
+
+.carousel-inner h5 {
+  font-weight: 600;
 }
