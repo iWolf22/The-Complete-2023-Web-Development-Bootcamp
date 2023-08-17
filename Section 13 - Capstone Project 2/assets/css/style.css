@@ -1164,10 +1164,20 @@ section {
 }
 
 .modal mark {
-  background-color: #ffffff8c;
-  color: #050d18;
+  background-color: #ffffffd5;
+  color: #149ddd;
 }
 
 .carousel-inner h5 {
   font-weight: 600;
+}
+
+.carousel-control-prev-icon {
+  background-image: none;
+  content: url("../img/icons/reshot-icon-chevron-arrow-left-circle.svg");
+}
+
+.carousel-control-next-icon {
+  background-image: none;
+  content: url("../img/icons/reshot-icon-chevron-arrow-right-circle.svg");
 }
