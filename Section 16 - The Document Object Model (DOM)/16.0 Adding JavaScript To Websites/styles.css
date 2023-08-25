@@ -1,0 +1,18 @@
+html {
+    background-color: #9bbee6;
+}
+
+body {
+    background-color: #769ccb;
+    border-radius: 50px;
+    border: #eeeeee solid 10px;
+    padding: 50px;
+    margin: 50px;
+}
+
+h1, p {
+    color: #15224b;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
