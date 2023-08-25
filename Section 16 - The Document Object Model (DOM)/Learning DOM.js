@@ -55,6 +55,8 @@ document.querySelector("#list .item a").style.color = "red";
 // Query Selector All - Returns an array of multiple items
 document.querySelectorAll("ul li");
 
+
+
 // -----===== 16.3 Manipulation CSS Using JavaScript =====-----
 
 //https://www.w3schools.com/jsref/dom_obj_style.asp
@@ -64,23 +66,45 @@ document.querySelector("h1").style.fontSize = "50px";
 document.querySelector("h1").style.visibility = "hidden";
 document.querySelector("body button.btn").style.backgroundColor = "yellow";
 
+
+
 // -----===== 16.4 Structure vs. Style vs. Behaviour =====-----
 
+// Adding a class to an element
+document.querySelector("button").classList.add("new-btn");
+
+// Removing a class to an element
+document.querySelector("button").classList.remove("new-btn");
+
+// Toggling a class for an element on and off
+document.querySelector("button").classList.toggle("new-btn");
+
+// Activity
+document.querySelector("h1").classList.toggle("huge");
 
 
 
+// -----===== 16.4 Text Manipulation =====-----
+
+// Just gives you the text content and nothing elese 
+document.getElementById("title").textContent = "Hello";
+
+// Can add HTML elements on the fly
+document.getElementById("title").innerHTML = "Good <em>Bye</em>";
 
 
 
+// -----===== 16.4 HTML Attributes Manipulation =====-----
 
+// Gets the attributes of an element
+document.querySelector("a").attributes;
+document.querySelector("li").attributes;
 
+// Gets a specific attribute of an element
+document.querySelector("a").getAttribute("href");
 
-
-
-
-
-
-
+// Sets the google.com href to bing.com
+document.querySelector("a").setAttribute("href", "https://www.bing.com/");
 
 
 
