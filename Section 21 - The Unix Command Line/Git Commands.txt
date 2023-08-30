@@ -1,0 +1,39 @@
+-----===== Section 21 - The Unix Command Line =====-----
+
+Show a list of all files
+$ls
+
+Change directory
+$cd Documents
+$cd Downloads
+$cd Documents/GitHub/hackPHS-2020s
+
+Go back the the parent directory
+$ cd ..
+
+Root directory
+$ cd ~
+
+Make a new folder
+$ mkdir FolderName
+
+Make a new file
+$ touch FileName.FileExtention
+
+Enter a file
+$ start FileName.FileExtention
+
+Delete a file
+$ rm FileName.FileExtention
+
+Delete all files
+$ rm *
+
+Print directory Command
+$ pwd
+
+Delete a folder
+$ rm -r FolderName
+
+Clears your screen
+$ clear
