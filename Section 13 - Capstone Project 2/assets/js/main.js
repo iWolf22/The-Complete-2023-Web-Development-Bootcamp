@@ -1,11 +1,3 @@
-/**
-* Template Name: iPortfolio
-* Updated: Jul 27 2023 with Bootstrap v5.3.1
-* Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 function colorChange(buttonId) {
 
   var button = document.getElementById(buttonId).style.backgroundColor;  
@@ -24,15 +16,6 @@ function colorChange(buttonId) {
   
   }
 }
-
-/*
-function buttonColor(buttonId) {
-  const button = document.getElementById(buttonId).style.backgroundColor;
-
-  console.log(JSON.stringify(document.getElementById(buttonId).style.backgroundColor));
-  console.log("Hello World");
-}
-*/
 
 (function() {
   "use strict";
