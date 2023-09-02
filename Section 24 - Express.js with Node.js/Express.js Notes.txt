@@ -1,0 +1,7 @@
+-----===== Section 24 - Express.js with Node.js =====-----
+
+Check for all the local host ports
+$ netstat -ano | findstr "LISTENING"
+
+HTTP
+HyperText Transfer Protocol
