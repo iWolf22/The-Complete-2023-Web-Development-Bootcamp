@@ -1,0 +1,19 @@
+-----===== Section 23 - Node.js =====-----
+
+Node version
+$ node -v
+$ node --version
+
+Enter node
+$ node
+
+Exit node
+$ .exit
+
+Help
+$ .help
+
+Run program (Have to be in the file directory)
+node .\index.js
+
+You can run any JavaScript code in node, since it is a JavaScript run time.
