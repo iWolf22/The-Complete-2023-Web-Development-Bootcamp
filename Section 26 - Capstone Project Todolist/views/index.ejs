@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <title>Name Letters</title>
+</head>
+
+<body>
+  <!-- Write your code here -->
+
+
+  <section class="vh-100" id="background-gradient">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-lg-8 col-xl-6">
+          <div class="card rounded-3">
+            <div class="card-body p-4">
+  
+              <p class="mb-2"><span class="h2 me-2">Todo List</span>
+              <p class="text-muted pb-2">By Joshua Dierickse. Made with HTML, CSS, Javascript, BootStrap, NodeJS, ExpressJS, and EJS.</p>
+
+              <form action="/add-item" method="POST">
+                <input type="text" name="newItem" placeholder="New Item" id="input-box">
+                <input type="submit" value="✅">
+              </form>
+
+              <ul class="list-group rounded-0">
+                <% for (var i = 0; i < updateList.length; i++) { %>
+
+                  <li class="list-group-item border-0 d-flex align-items-center">
+                    <form action="/delete-item" method="POST">
+                      <input type="text" name="deleteItem" value="<%= i %>" hidden="true">
+                      <input type="submit" value="🗑️">
+                    </form>
+                    <div>
+                      <h6 class="mb-0 px-3"><%= updateList[i][0] %></h6>
+                      <p class="opacity-75 mb-0 px-3"><%= updateList[i][1] %></p>
+                    </div>
+                  </li>
+                <% } %>
+              </ul>
+
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</body>
+
+</html>
