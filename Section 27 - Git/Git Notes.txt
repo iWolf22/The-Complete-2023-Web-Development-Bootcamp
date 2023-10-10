@@ -1,0 +1,29 @@
+(In the git bash)
+
+git init
+
+git status
+
+git add chapter1.txt
+git add .
+
+git log
+
+git commit -m "Commit Message"
+
+git diff chapter3.txt
+
+git checkout chapter3.txt
+
+git remote add origin <url>
+git push -u origin
+
+git clone <url>
+
+git branch name-of-branch
+git checkout name-of-branch
+git branch
+
+git merge name-of-branch
+
+clear
