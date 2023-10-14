@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Taco Recipes</title>
+  <link rel="stylesheet" type="text/css" href="/styles/main.css">
+</head>
+
+<body>
+  <h1>Taco Town 🌮</h1>
+
+  <form action="/recipe" method="POST" class="buttons">
+    <button type="submit" value="chicken" name="choice">🍗</button>
+    <button type="submit" value="beef" name="choice">🥩</button>
+    <button type="submit" value="fish" name="choice">🐟</button>
+  </form>
+  <div id="recipeContainer" class="hidden">
+
+    <!-- If no recipe yet, show: -->
+    <h2>Pick your favourite taco ingredient 👆</h2>
+    <!-- Else, show the recipe name e.g. <h2>Recipe name</h2>-->
+
+    <% if (start === "false") { %>
+      <h2><%= recipe["name"] %></h2>
+      <p>Price: $<%= recipe["price"] %></p>
+      <h3>Ingredients:</h3>
+      <ul id="ingredientsList">
+        <li><%= recipe["ingredients"]["protein"]["preparation"] %> <%= recipe["ingredients"]["protein"]["name"] %></li>
+        <li><%= recipe["ingredients"]["salsa"]["spiciness"] %> <%= recipe["ingredients"]["salsa"]["name"] %></li>
+        <h3>Toppings:</h3>
+        <% for (var i = 0; i < recipe["ingredients"]["toppings"].length; i++) {%>
+          <li><%= recipe["ingredients"]["toppings"][i]["quantity"] %> <%= recipe["ingredients"]["toppings"][i]["name"] %></li>
+          
+          <li><em> Made with: 
+          <% for (var j = 0; j < recipe["ingredients"]["toppings"][i]["ingredients"].length; j++) {%>
+            <%= recipe["ingredients"]["toppings"][i]["ingredients"][j] %>, 
+          <% } %>
+          </em></li>
+
+        <% } %>
+      </ul>
+
+    <% } %>
+
+
+
+  </div>
+</body>
+
+</html>
