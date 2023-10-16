@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Weather API Project</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body class="gradient-background">
+
+    <div class="container my-5">
+        <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 rounded-3 border shadow-lg" style="background-color: aliceblue;">
+          
+            <div class="col-lg-5 p-3 p-lg-5 pt-lg-3">
+                <h1 class="display-4 fw-bold lh-1 text-body-emphasis">Weather API Project</h1>
+
+                <form action="/submitCity" method="POST" class="my-4" style="display: flex">
+                    <% if (currentScreen === "screen1") { %>
+                        <input type="text" name="cityName" placeholder="City Name" style="flex-grow: 5; margin-right: 10px;">
+                    <% } else { %>
+                        <input type="text" name="cityName" placeholder="City Name" value="<%= cityName %>" style="flex-grow: 5; margin-right: 10px;">
+                    <% } %>
+                    <input type="submit" value="Submit" style="flex-grow: 1" class="btn btn-outline-secondary">
+                </form>
+                
+                <% if (currentScreen === "screen1") { %>
+                    <p class="lead">Input the name of the city you would like to retrive weather data from.</p>
+                <% } else if (currentScreen === "screen2") { %>
+                    <p class="lead">Select which city you would like to retrive weather data from.</p>
+                <% } else { %>
+                    <p class="lead">Enjoy the weather data from <%= cityName %>.</p>
+                <% } %>
+            </div>
+          
+            <div class="col-lg-6 p-3 p-lg-5 pt-lg-3">
+                <% if (currentScreen === "screen2") { %>
+                    <% for (var i = 0; i < cityList.length; i++) { %>
+                        <form action="/selectCity" method="POST">
+                            <input hidden="true" type="text" name="cityID" value="<%= cityList[i][5] %>">
+                            <input type="submit" value="<%= cityList[i][0] + ", " + cityList[i][2] + ", " + cityList[i][1] %>" class="btn btn-secondary">
+                        </form>
+                        <hr>
+                    <% } %>
+                <% } %> 
+            
+                <% if (currentScreen === "screen3") { %>
+                    <h1 class="display-4 fw-bold lh-1 text-body-emphasis" style="padding-bottom: 20px;"><%= cityName %>, <%= provinceName %>, <%= countryName %> </h1>
+                    <p class="lead"><b>Latitude/Longitude:</b> <%= cityData.coord.lon %>, <%= cityData.coord.lat %></p>
+                    <p class="lead"><b>Temperature:</b> <%= Math.round((cityData.main.temp - 273.15) * 100) / 100 %>°C</p>
+                    <p class="lead"><b>Feels Like:</b> <%= Math.round((cityData.main.feels_like - 273.15) * 100) / 100 %>°C</p>
+                    <p class="lead"><b>Description:</b> <%= cityData.weather[0].main %></p>
+                    <p class="lead"><b>Pressure:</b> <%= cityData.main.pressure / 10 %> kPa</p>
+                    <p class="lead"><b>Humidity:</b> <%= cityData.main.humidity %>%</p>
+                    <p class="lead"><b>Visibility:</b> <%= cityData.visibility / 1000 %>km out of 10km</p>
+                    <p class="lead"><b>Wind:</b> <%= cityData.wind.speed %>m/s at <%= cityData.wind.deg %>°</p>
+                    <p class="lead"><b>Cloudiness:</b> <%= cityData.clouds.all %>%</p>
+                <% } %>
+            </div>
+        </div>
+      </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body>
+    
+</html>
