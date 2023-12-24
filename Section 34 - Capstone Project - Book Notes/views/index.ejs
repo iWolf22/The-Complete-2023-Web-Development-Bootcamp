@@ -4,26 +4,45 @@
 
   <!---- Hero ---->
   <% if (currentPage === "Home") { %>
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5 border-bottom" style="margin-bottom: 50px;">
       <div class="col-10 col-sm-8 col-lg-6">
         <img src="hero-books.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
       </div>
       <div class="col-lg-6">
         <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">BookNotes™</h1>
-        <p class="lead">Ever forget about the books you read? Well fear nolonger as BookNotes™ allows you to easily track and save all the wonderful books you have read, using the power of NodeJS, Express, Axios, and PostgreSQL!</p>
+        <p class="lead">Ever forget about the books you read? Well fear nolonger as BookNotes™ allows you to easily track and save all the wonderful books you have read, using the power of NodeJS, Express, Axios, and PostgreSQL!<br><br>Add a new book to your catolog by simply searching for it and filling in the promted information. Happy reading!</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Get Started</button>
-          <button type="button" class="btn btn-outline-secondary btn-lg px-4">Github</button>
+
+          <form action="/nav" method="POST">
+            <input class="btn btn-primary btn-lg px-4 me-md-2" type="submit" name="nav" value="Catalog"></input>
+            <a type="button" class="btn btn-outline-secondary btn-lg px-4" href="https://github.com/iWolf22/The-Complete-2023-Web-Development-Bootcamp" target="_blank">Github</a>
+          </form>
+
         </div>
       </div>
     </div>
   <% } %>
 
   <!---- Add Book Form ---->
-  <form action="/addBook" method="POST" style="display: flex; margin-bottom: 20px;">
-    <input type="text" class="form-control" name="newBook" placeholder="Enter a new book to add to the Catalog!" style="flex-grow: 1">
-    <input type="submit" type="button" class="btn btn-primary" style="margin-left: 5px;" value="Add Book 📚">
-  </form>
+  <% if (currentPage === "Search Page" || currentPage === "Catalog" || currentPage === "Home") { %>
+    <form action="/addBook" method="POST" style="display: flex; margin-bottom: 20px;">
+      <input type="text" class="form-control" name="newBook" placeholder="Enter a new book to add to the Catalog!" style="flex-grow: 1">
+      <input type="submit" type="button" class="btn btn-primary" style="margin-left: 10px;" value="Search For Book 🔎">
+    </form>
+  <% } %>
+
+  <!---- View Book ---->
+  <% if (currentPage === "View") { %>
+    <div class="row">
+      <div class="col-3">
+        <% bookCardGen(currentBook); %>
+      </div>
+      <div class="col-8">
+        <p style="padding: 0px; margin: 0px; font-size: small;"><b>Finished Reading: </b><%= searchInfo.data.docs[currentBook].read %> • <b>Book Score: </b><%= searchInfo.data.docs[currentBook].score %>/10.0</p>
+        <p style="padding: 0px; margin: 0px"><%= searchInfo.data.docs[currentBook].notes %></p>
+      </div>
+    </div>
+  <% } %>
 
   <!---- Book Search ---->
   <% if (currentPage === "Search Page") { %>
@@ -62,12 +81,12 @@
 
             <div class="row">
               <div class="col-sm">
-                <label class="form-label">Book Title</label>
+                <label class="form-label">📚 Book Title</label>
                 <% try {var formTitle = searchInfo.data.docs[currentBook].title} catch(err) {var formTitle = "Title Unavailable"}%>
                 <input class="form-control" name="bookTitle" value="<%= formTitle %>" placeholder="Enter the book title!">
               </div>
               <div class="col-sm">
-                <label class="form-label">Book Author</label>
+                <label class="form-label">👩 Book Author</label>
                 <% try {var formAuthor = searchInfo.data.docs[currentBook].author_name[0]} catch(err) {var formAuthor = "Author Unavailable"}%>
                 <input class="form-control" name="bookAuthor" value="<%= formAuthor %>" placeholder="Enter the book author!">
               </div>
@@ -75,23 +94,23 @@
 
             <div class="row">
               <div class="col-sm">
-                <label class="form-label" style="padding-top: 20px;">Publish Date</label>
+                <label class="form-label" style="padding-top: 20px;">✍️ Publish Date</label>
                 <% try {var formDate = searchInfo.data.docs[currentBook].first_publish_year} catch(err) {var formDate = "Date Unavailable"}%>
                 <input class="form-control" name="publishDate" value="<%= formDate %>" placeholder="Enter the publish date!">
               </div>
               <div class="col-sm">
                 <% try {var formRead = searchInfo.data.docs[currentBook].read} catch(err) {var formRead = ""}%>
-                <label class="form-label" style="padding-top: 20px;">Date Read</label>
+                <label class="form-label" style="padding-top: 20px;">📖 Date Read</label>
                 <input class="form-control" name="dateRead" value="<%= formRead %>" placeholder="MM-DD-YYYY">
               </div>
             </div>
 
             <% try {var formNotes = searchInfo.data.docs[currentBook].notes} catch(err) {var formNotes = ""}%>
-            <label class="form-label" style="padding-top: 20px;">Book Notes</label>
+            <label class="form-label" style="padding-top: 20px;">📝 Book Notes</label>
             <textarea class="form-control" name="bookNotes" rows="5" placeholder="Enter your notes about the book here!"><%= formNotes %></textarea>
 
             <% try {var formScore = searchInfo.data.docs[currentBook].score} catch(err) {var formScore = ""}%>
-            <label class="form-label" style="padding-top: 20px;">Book Score Out Of 10.0</label>
+            <label class="form-label" style="padding-top: 20px;">🏆 Book Score Out Of 10.0</label>
             <input class="form-control" name="bookScore" value="<%= formScore %>" placeholder="Enter a book score like '9.5' if it was a really good book!">
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>

@@ -13,6 +13,16 @@ function bookActions(actionId, buttonType) {
     { 
         actionId: actionId,
         buttonType: buttonType,
+    }, 
+    function (data, status) { 
+        location.reload();
+    });
+}
+
+function homePost() {
+    $.post("/nav", 
+    { 
+        nav: "Home",
 
     }, 
     function (data, status) { 

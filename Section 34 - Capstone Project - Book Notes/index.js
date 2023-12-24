@@ -114,12 +114,9 @@ app.post("/bookActions", async (req, res) => {
 	if (req.body.buttonType === "Delete") {
 		db.query("DELETE FROM books WHERE id=" + req.body.actionId + ";");
 	}
-	else if (req.body.buttonType === "Edit") {
-		currentPage = "Edit Page";
-		catalog = await db.query("SELECT id, title, author, publish, read, notes, score, cover FROM books WHERE id=" + req.body.actionId + ";");
+	else {
 		currentBook = 0;
-		bookAction = catalog.rows[0].id;
-
+		catalog = await db.query("SELECT id, title, author, publish, read, notes, score, cover FROM books WHERE id=" + req.body.actionId + ";");
 		searchInfo = {
 			data: {
 				docs: [{
@@ -133,14 +130,18 @@ app.post("/bookActions", async (req, res) => {
 				}]
 			}
 		}
-
-	}
-	else {
-		currentPage = "View";
+		if (req.body.buttonType === "Edit") {
+			currentPage = "Edit Page";
+			bookAction = catalog.rows[0].id;
+		}
+		else {
+			currentPage = "View";
+		}
 	}
 
 	res.redirect("/");
 });
+
 
 app.listen(port, () => {
 	console.log(`Server running on port ${port}`);
