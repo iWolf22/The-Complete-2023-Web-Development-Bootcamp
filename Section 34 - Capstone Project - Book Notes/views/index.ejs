@@ -1,0 +1,187 @@
+<div class="container">
+  
+  <%- include('partials/header.ejs'); -%>
+
+  <!---- Hero ---->
+  <% if (currentPage === "Home") { %>
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="hero-books.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">BookNotes™</h1>
+        <p class="lead">Ever forget about the books you read? Well fear nolonger as BookNotes™ allows you to easily track and save all the wonderful books you have read, using the power of NodeJS, Express, Axios, and PostgreSQL!</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Get Started</button>
+          <button type="button" class="btn btn-outline-secondary btn-lg px-4">Github</button>
+        </div>
+      </div>
+    </div>
+  <% } %>
+
+  <!---- Add Book Form ---->
+  <form action="/addBook" method="POST" style="display: flex; margin-bottom: 20px;">
+    <input type="text" class="form-control" name="newBook" placeholder="Enter a new book to add to the Catalog!" style="flex-grow: 1">
+    <input type="submit" type="button" class="btn btn-primary" style="margin-left: 5px;" value="Add Book 📚">
+  </form>
+
+  <!---- Book Search ---->
+  <% if (currentPage === "Search Page") { %>
+    <div class="row">
+      <% for (let j = 0; j < Math.min(5, searchInfo.data.numFound - ((page - 1) * 5)); j++) { %>
+        <% var bookId = j + (page - 1) * 5 %>
+        <div onclick="bookRequest(parseInt('<%= bookId %>'))" class="col-sm search-div">
+          <% bookCardGen(bookId); %>
+        </div>
+      <% } %>
+    </div>
+
+    <!---- Pagination ---->
+    <nav aria-label="Page navigation example" style="display: flex; justify-content: center;">
+      <ul class="pagination">
+        <form action="/arrows" method="POST">
+            <li class="page-item" ><input style="border-top-right-radius: 0px; border-bottom-right-radius: 0px;" class="page-link" type="submit" aria-label="Previous" name="arrow" value="&laquo;"></input></li>
+        </form>
+        <li class="page-item"><a class="page-link" href="#"><%= page %> / <%= Math.ceil(searchInfo.data.numFound / 5) %></a></li>
+        <form action="/arrows" method="POST">
+          <li class="page-item" ><input style="border-top-left-radius: 0px; border-bottom-left-radius: 0px;" class="page-link" type="submit" aria-label="Next" name="arrow" value="&raquo;"></input></li>
+        </form>
+      </ul>
+    </nav>
+  <% } %>
+
+  <!---- Edit Book Page ---->
+  <% if (currentPage === "Edit Page") { %>
+    <div class="row">
+      <div class="col-3">
+        <% bookCardGen(currentBook); %>
+      </div>
+      <div class="col-9">
+        <form class="card" style="padding: 20px" action="/finalBookData" method="POST">
+          <div class="mb-3">
+
+            <div class="row">
+              <div class="col-sm">
+                <label class="form-label">Book Title</label>
+                <% try {var formTitle = searchInfo.data.docs[currentBook].title} catch(err) {var formTitle = "Title Unavailable"}%>
+                <input class="form-control" name="bookTitle" value="<%= formTitle %>" placeholder="Enter the book title!">
+              </div>
+              <div class="col-sm">
+                <label class="form-label">Book Author</label>
+                <% try {var formAuthor = searchInfo.data.docs[currentBook].author_name[0]} catch(err) {var formAuthor = "Author Unavailable"}%>
+                <input class="form-control" name="bookAuthor" value="<%= formAuthor %>" placeholder="Enter the book author!">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm">
+                <label class="form-label" style="padding-top: 20px;">Publish Date</label>
+                <% try {var formDate = searchInfo.data.docs[currentBook].first_publish_year} catch(err) {var formDate = "Date Unavailable"}%>
+                <input class="form-control" name="publishDate" value="<%= formDate %>" placeholder="Enter the publish date!">
+              </div>
+              <div class="col-sm">
+                <% try {var formRead = searchInfo.data.docs[currentBook].read} catch(err) {var formRead = ""}%>
+                <label class="form-label" style="padding-top: 20px;">Date Read</label>
+                <input class="form-control" name="dateRead" value="<%= formRead %>" placeholder="MM-DD-YYYY">
+              </div>
+            </div>
+
+            <% try {var formNotes = searchInfo.data.docs[currentBook].notes} catch(err) {var formNotes = ""}%>
+            <label class="form-label" style="padding-top: 20px;">Book Notes</label>
+            <textarea class="form-control" name="bookNotes" rows="5" placeholder="Enter your notes about the book here!"><%= formNotes %></textarea>
+
+            <% try {var formScore = searchInfo.data.docs[currentBook].score} catch(err) {var formScore = ""}%>
+            <label class="form-label" style="padding-top: 20px;">Book Score Out Of 10.0</label>
+            <input class="form-control" name="bookScore" value="<%= formScore %>" placeholder="Enter a book score like '9.5' if it was a really good book!">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  <% } %>
+
+    <!---- Catalog ---->
+    <% if (currentPage === "Catalog" || currentPage === "Home") { %>
+      <% for (let i = 0; i < Math.ceil(catalog.length / 2); i++) { %>
+        <div class="row" style="margin-bottom: 20px;">
+          <% for (let j = 0; j < Math.min(2, catalog.length - 2*i); j++) { %>
+            <div class="col-6">
+              <% if (j === 0) { var gridStyle = "padding: 10px 0px 10px 0px; margin: 10px 10px 10px 0px" } else { var gridStyle = "padding: 10px 0px 10px 0px; margin: 10px 0px 10px 10px"} %>
+              <div class="card row" style="<%= gridStyle %>">
+                <div class="row">
+
+                  <div class="col-4">
+                    <div class="card" style="width: 12rem;">
+                      <img class="card-img-top" src="<%= catalog[i*2 + j].cover %>" alt="Card image cap" style="height: 18rem; width: 12rem; object-fit: cover;">
+                      <div class="card-body">
+                        <h5 class="card-title"><%= catalog[i*2 + j].title %></h5>
+                        <span class="card-text"><%= catalog[i*2 + j].author %></span>
+                        <span class="card-text">•</span>
+                        <span class="card-text" style="font-style: italic;"><%= catalog[i*2 + j].publish %></span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-8">
+                    <div style="height: 100%; display: flex; flex-wrap: wrap; align-content: space-between;">
+                      <div>
+                        <p style="padding: 0px; margin: 0px; font-size: small;"><b>Finished Reading: </b><%= catalog[i*2 + j].read %> • <b>Book Score: </b><%= catalog[i*2 + j].score %>/10</p>
+                        
+                        <% if (catalog[i*2 + j].notes.length > 650) { var notes = catalog[i*2 + j].notes.slice(0, 650) + "..." } else { var notes = catalog[i*2 + j].notes } %>
+                        <p style="padding: 0px; margin: 0px"><%= notes %></p>
+                      </div>
+                      <div style="display: flex; justify-content: flex-end; width: 100%; gap: 5px;">
+
+
+                        <button class="btn btn-outline-primary btn-sm" onclick="bookActions(<%= catalog[i*2 + j].id %>, 'View')">View</button>
+                        <button class="btn btn-outline-warning btn-sm" onclick="bookActions(<%= catalog[i*2 + j].id %>, 'Edit')">Edit</button>
+                        <button class="btn btn-outline-danger btn-sm" onclick="bookActions(<%= catalog[i*2 + j].id %>, 'Delete')">Delete</button>
+
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          <% } %>
+        </div>
+      <% } %>
+    <% } %>
+
+  <% function bookCardGen(bookId) { %>
+    <div class="card" style="width: 15rem;">
+      <% try { %>
+        <% if (searchInfo.data.docs[bookId].cover_i === undefined) { %>
+          <img class="card-img-top" src="Soothing_Clouds.jpg" alt="Card image cap" style="height: 22rem; width: 15rem; object-fit: cover;">
+        <% } else { %>
+          <img class="card-img-top" src=<%= "https://covers.openlibrary.org/b/id/" + searchInfo.data.docs[bookId].cover_i + "-L.jpg" %> alt="Card image cap" style="height: 22rem; width: 15rem; object-fit: cover;">
+        <% } %>
+      <% } catch(err) { %>
+        <img class="card-img-top" src="Soothing_Clouds.jpg" alt="Card image cap" style="height: 22rem; width: 15rem; object-fit: cover;">
+      <% } %>
+      <div class="card-body">
+        <% try { %>
+          <h5 class="card-title"><%= searchInfo.data.docs[bookId].title %></h5>
+        <% } catch(err) { %>
+          <h5 class="card-title">Title Unavailable</h5>
+        <% } %>
+        <% try { %>
+          <span class="card-text"><%= searchInfo.data.docs[bookId].author_name[0] %></span>
+        <% } catch(err) { %>
+          <span class="card-text">Author Unavailable</span>
+        <% } %>
+        <spam>•</spam>
+        <% try { %>
+          <span class="card-text" style="font-style: italic;"><%= searchInfo.data.docs[bookId].first_publish_year %></span>
+        <% } catch(err) { %>
+          <span class="card-text" style="font-style: italic;">Date Unavailable</span>
+        <% } %>
+      </div>
+    </div>
+  <% } %>
+
+
+  <%- include('partials/footer.ejs'); -%>
+
+</div>
