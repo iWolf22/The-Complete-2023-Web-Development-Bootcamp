@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import { default as mongodb } from 'mongodb';
 let MongoClient = mongodb.MongoClient;
 import mongoose from "mongoose";
+import encrypt from "mongoose-encrytion";
 
 const app = express();
 
@@ -10,7 +11,7 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 
-const uri = "";
+const uri = "mongodb+srv://JoshuaDierickse:K6fxhtWEiYNWpOQD@note-tuts.fm5iq0c.mongodb.net/?retryWrites=true&w=majority";
 mongoose.connect(uri);
 
 const userSchema = {
@@ -44,5 +45,21 @@ app.post("/register", function(req, res) {
 
     newUser.save();
     res.render("secrets");
-
 });
+
+app.post("/login", function(req, res) {
+    const username = req.body.username;
+    const password = req.body.password;
+
+    User.findOne({email: username})
+    .then((docs)=>{
+        if (docs.password === password) {
+            res.render("secrets");
+        } else {
+            res.render("login");
+        }
+    })
+    .catch((err)=>{
+        console.log(err);
+    });
+})
