@@ -2,14 +2,16 @@ import express from "express";
 import bodyParser from "body-parser";
 import { default as mongodb } from 'mongodb';
 let MongoClient = mongodb.MongoClient;
-import mongoose from "mongoose";
-import md5 from "md5";
+import mongoose from "mongoose"; 
+import bcrypt from "bcrypt"; 
 
 const app = express();
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
+
+const saltRounds = 10;
 
 mongoose.connect("mongodb://127.0.0.1:27017/userDB");
 
@@ -37,24 +39,30 @@ app.listen(3000, function() {
 })
 
 app.post("/register", async function(req, res) {
-    const newUser = new User({
-        email: req.body.username,
-        password: md5(req.body.password)
-    })
 
-    await newUser.save();
-    res.render("secrets");
+    bcrypt.hash(req.body.password, saltRounds, async function(err, hash) {
+        const newUser = new User({
+            email: req.body.username,
+            password: hash
+        });
+    
+        await newUser.save();
+        res.render("secrets");
+    });
+
 });
 
 app.post("/login", async function(req, res) {
     const username = req.body.username;
-    const password = md5(req.body.password);
+    const password = req.body.password;
 
     const inputPassword = await User.findOne({email: username});
 
-    if (inputPassword.password === password) {
-        res.render("secrets");
-    } else {
-        res.render("login");
-    }
+    bcrypt.compare(password, inputPassword.password, function(err, result) {
+        if (result === true) {
+            res.render("secrets");
+        } else {
+            res.render("login");
+        }
+    });
 });
