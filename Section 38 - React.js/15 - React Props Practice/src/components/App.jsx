@@ -12,7 +12,11 @@ function App() {
   htmlToReact += "<p>Copyright Joshua Dierickse</p></div>";
   htmlToReact = parse(htmlToReact);
 
-  return htmlToReact;
+  return (
+    <div>
+      <h1 className='heading'>My Contacts</h1>
+    </div>
+  );
 }
 
 export default App;
