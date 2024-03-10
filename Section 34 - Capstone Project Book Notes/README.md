@@ -8,18 +8,23 @@ Add a new book to your catalogue by simply searching for it and filling in the p
 ## Pictures
 
 ![img-1](https://github.com/iWolf22/The-Complete-2023-Web-Development-Bootcamp/assets/74108689/61a7ce72-437a-4eeb-a031-129def94d50c)
+
 ^^^ Home Screen ^^^ 
 
 ![img-2](https://github.com/iWolf22/The-Complete-2023-Web-Development-Bootcamp/assets/74108689/a0b16563-c11a-4594-8fcb-84846491716c)
+
 ^^^ Catalogue Screen ^^^
 
 ![img-3](https://github.com/iWolf22/The-Complete-2023-Web-Development-Bootcamp/assets/74108689/f763c844-7427-4d1d-ad90-74b643921e09)
+
 ^^^ Book Info Screen ^^^
 
 ![img-5](https://github.com/iWolf22/The-Complete-2023-Web-Development-Bootcamp/assets/74108689/982e1684-0ced-40cf-84fa-7e89199963b6)
+
 ^^^ Book Editor Screen ^^^
 
 ![img-4](https://github.com/iWolf22/The-Complete-2023-Web-Development-Bootcamp/assets/74108689/8f991007-a893-4380-aa37-0bc9730f4fac)
+
 ^^^ Book Search Screen ^^^
 
 ## Bullet Points
