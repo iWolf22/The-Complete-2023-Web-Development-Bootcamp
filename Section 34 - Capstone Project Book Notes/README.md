@@ -21,11 +21,12 @@ Add a new book to your catalogue by simply searching for it and filling in the p
 
 ![img-5](https://github.com/iWolf22/The-Complete-2023-Web-Development-Bootcamp/assets/74108689/982e1684-0ced-40cf-84fa-7e89199963b6)
 
-^^^ Book Editor Screen ^^^
+^^^ Book Search Screen ^^^
 
 ![img-4](https://github.com/iWolf22/The-Complete-2023-Web-Development-Bootcamp/assets/74108689/8f991007-a893-4380-aa37-0bc9730f4fac)
 
-^^^ Book Search Screen ^^^
+^^^ Book Editor Screen ^^^
+
 
 ## Bullet Points
 
