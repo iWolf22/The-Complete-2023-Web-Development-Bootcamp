@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Joshua Dierickse</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/Panda-emoji.png">
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+</head>
+    <header>
+        <div class="header-container" id="home-div">
+            <button class="header-text" onClick="document.getElementById('home-div').scrollIntoView();">Home</button>
+            <button class="header-text" onClick="document.getElementById('about-div').scrollIntoView();">About Me</button>
+            <button class="header-text" onClick="document.getElementById('portfolio-div').scrollIntoView();">Portfolio</button>
+            <button class="header-text" onClick="document.getElementById('socials-div').scrollIntoView();">Socials</button>
+            <button class="header-text" onClick="document.getElementById('resume-div').scrollIntoView();">Resume</button>
+        </div>
+        <button class="up-arrow" onClick="document.getElementById('home-div').scrollIntoView();">^</button>
+    <body>
+
+        <div class="info-container">
+            <p class="info-title">Hello, I am Joshua Dierickse</p>
+            <img class="info-photo" src="images/Info-photo.jpg" alt="info photo">
+            <p class="info-text">Welcome to my website, wondering visitor! I am Joshua Dierickse, a young computer enthusiast who is an avid programmer. I currently attend Waterloo Collegiate Institute as a grade 12 student, being passionate in mathematics, science and technology.</p>
+            <hr class="alt-color">
+            <p class="info-text">Throughout my academic career I have been awarded with the honour role in grades 9, 10 and 11 for my high 90s grades. Furthermore, I was prized with the prestigious computer science merit award for both grades 11 and 12.</p>
+            <hr class="alt-color">
+            <p class="info-text">Not only do I excel academically but I am also an active leader in my local and school communities. At school, I am a part of numerous clubs and sport teams, a shortened list being: the varsity hockey team, track and field, coding club and chess club which I lead as an exec.</p>
+            <hr class="alt-color">
+            <p class="info-text">In my community, I am the assistant captain on my competitive hockey team. I also enjoy giving back to the hockey community too by refereeing hockey games for Waterloo Minor Hockey and K-W Inline Hockey League both of which I am currently employed.</p>
+            <hr class="alt-color">
+            <p class="info-text"> * Note this website was made only for desktop computers with a 1080p monitor</p>
+        </div>
+
+        <div class="carousel-container" id="about-div">
+            <p class="info-title">About Me Slideshow</p>
+            <div class="sub-carousel-container">
+                <script type="text/javascript" src="carousel-slider.js"></script>
+                <p class="carousel-arrow" onclick="carousel_slider('left')">←</p>
+                <img class="carousel-photo" id="carousel-picture" src="carousel-images/carousel-photo-1.jpg" alt="carousel photo">
+                <p class="carousel-arrow" onclick="carousel_slider('right')">→</p>
+                <p class="carousel-counter" id="carousel-number">1/6</p>
+                <p class="carousel-text" id="carousel-writing">Shad Carleton Design Group Two's Prototype "Symphony Strips"</p>
+            </div>
+        </div>
+
+        <div id="portfolio-div">
+            <script src="portfolio-generator.js"></script>
+        </div>
+
+        <div id="socials-div">
+            <script src="social-media-generator.js"></script>
+        </div>
+
+        <div class="resume-container" id="resume-div">
+            <p class="info-title">Joshua Dierickse's Resume</p>
+                <embed class="resume-format" src="assets/Joshua Dierickse's Resume.pdf"/>
+        </div>
+    </body>
+
+    <footer>
+        <div class="header-container top-margin">
+            <p class="info-title smaller-font">© Copyright 2022 Joshua Dierickse</p>
+        </div>
+    </footer>
+</html>
