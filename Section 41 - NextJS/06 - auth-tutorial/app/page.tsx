@@ -1,6 +1,7 @@
 import { Poppins } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { LoginButton } from "@/components/auth/login-button";
 
 const font = Poppins({
   subsets: ["latin"],
@@ -14,8 +15,10 @@ export default async function Home() {
         <h1 className={cn("text-6xl font-semibold text-white drop-shadow-md", font.className)}>🔐Auth</h1>
         <p className="text-white text-lg">A simple authentication service</p>
       </div>
-      <div>
-        <Button variant="default" size="lg" className="bg-white rounded">Sign in</Button>
+      <div className="mt-6">
+        <LoginButton modal="redirect">
+          <Button variant="default" size="lg" className="bg-white hover:bg-[#c8dbec] rounded">Sign in</Button>
+        </LoginButton>
       </div>
       
     </main>
