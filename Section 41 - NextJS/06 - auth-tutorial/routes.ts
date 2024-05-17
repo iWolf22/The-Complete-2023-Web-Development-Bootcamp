@@ -2,7 +2,7 @@
  * Public routes
  * @type {string[]}
  */
-export const publicRoutes = ["/"];
+export const publicRoutes = ["/", "/auth/new-verification"];
 
 /**
  * Redirect logged in users to /settings
