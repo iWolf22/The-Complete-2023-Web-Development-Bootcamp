@@ -33,14 +33,6 @@ Below is a short list of the content I personally engaged with.
  - OAuth 2.0
  - React.js
 
----
-
 ## Contributors
 
 - Joshua Dierickse <joshua.dierickse@gmailcom>
-
----
-
-## License & Copyright
-
-© Joshua Dierickse, University of Waterloo
